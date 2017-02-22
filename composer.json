@@ -1,0 +1,12 @@
+{
+    "name": "datavalidata/asynx-app-skeleton",
+    "type": "project",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Ciaran Kelly",
+            "email": "ciaran@datavalidata.com"
+        }
+    ],
+    "require": {}
+}
