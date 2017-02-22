@@ -24,6 +24,12 @@
             "" : "app"
         }
     },
+    "scripts": {
+        "post-create-project-cmd": [
+            "php -r \"copy('.env-example', '.env');\"",
+            "echo \"\n\n  $ php vendor/bin/aerys --log info --config server.php\n\n\""
+        ]
+    },
     "suggest": {
         "datavalidata/aws-async-interop": "Access AWS SDK asynchronously"
     }
