@@ -1,0 +1,1 @@
+web: php vendor/bin/aerys -c server.php

@@ -8,5 +8,23 @@
             "email": "ciaran@datavalidata.com"
         }
     ],
-    "require": {}
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.0.0",
+        "amphp/aerys": "dev-amp_v2",
+        "amphp/loop": "dev-master",
+        "rdlowrey/auryn": "^1.4",
+        "vlucas/phpdotenv": "^2.4",
+        "beberlei/assert": "^2.7",
+        "lstrojny/functional-php": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "" : "app"
+        }
+    },
+    "suggest": {
+        "datavalidata/aws-async-interop": "Access AWS SDK asynchronously"
+    }
 }
