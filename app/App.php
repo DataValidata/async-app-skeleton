@@ -39,7 +39,7 @@ final class App
         };
 
         $initialiseRouting = function($serviceName) {
-            $service = $this->injector->make(\AppDefault\Service::class);
+            $service = $this->injector->make($serviceName);
             if($service instanceof \AppService\ExposesRouting) {
                 $routes = $service->getRouteConfiguration();
                 $serviceRouter = \Aerys\router();
