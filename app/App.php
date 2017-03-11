@@ -12,10 +12,13 @@ final class App
     /** @var \Aerys\Router  */
     private $router;
 
+    private $hostUsables = [];
+
     public final function __construct()
     {
         $this->injector = new \Auryn\Injector;
-        $this->router = \Aerys\router();
+
+        $this->attachHostUsable($this->router = \Aerys\router());
 
         $this->loadEnvironment();
         $this->validateEnvironment();
@@ -24,11 +27,28 @@ final class App
         $this->loadServices();
     }
 
-    private function getServices()
+    private function loadServices()
     {
-        return [
-            \AppDefault\Service::class
-        ];
+        Functional\map(
+            \AppService\ServiceLoader::getInstance()->getInjectionVisitables(),
+            function($visitable) {
+                forward_static_call($visitable.'::receiveInjectionVisit', $this->injector);
+            }
+        );
+
+        Functional\map(
+            \AppService\ServiceLoader::getInstance()->getServices(),
+            $this->getServiceBuildChain()
+        );
+
+        $fallback = function(\Aerys\Request $req, \Aerys\Response $res) {
+            $res->end("<html><body><h1>Fallback \o/</h1></body></html>");
+        };
+        $this->attachHostUsable($fallback);
+
+        foreach($this->hostUsables as $usable) {
+            $this->host->use($usable);
+        }
     }
 
     private function getServiceBuildChain()
@@ -44,13 +64,26 @@ final class App
                 $routes = $service->getRouteConfiguration();
                 $serviceRouter = \Aerys\router();
                 foreach($routes['routes'] as $route => $detail) {
-                    foreach($detail as $method => $controller) {
-                        $this->injector->share($controller);
-                        $serviceRouter->route(strtoupper($method), $route, $this->injector->make($controller));
+                    foreach($detail as $method => $controllerSpec) {
+                        if(is_callable($controllerSpec)) {
+                            $controller = $controllerSpec;
+                        } else {
+                            $this->injector->share($controllerSpec);
+                            $controller = $this->injector->make($controllerSpec);
+                        }
+
+                        $serviceRouter->route(strtoupper($method), $route, $controller);
                     }
                 }
                 $serviceRouter->prefix($routes['prefix']);
                 $this->router->use($serviceRouter);
+            }
+
+            if($service instanceof \AppService\ExposesStaticRouting) {
+                $docRoots = $service->getDocRoots();
+                foreach($docRoots as $docRoot) {
+                    $this->attachHostUsable(\Aerys\root($docRoot));
+                }
             }
             return $serviceName;
         };
@@ -59,13 +92,6 @@ final class App
             $buildService,
             $initialiseRouting
         );
-    }
-
-    private function loadServices()
-    {
-        Functional\map($this->getServices(), $this->getServiceBuildChain());
-
-        $this->host->use($this->router);
     }
 
     private function loadEnvironment()
@@ -94,5 +120,13 @@ final class App
             ->use($this->injector->make('\Logger'));
         $this->injector->share($this->host);
         return $this->host;
+    }
+
+    /**
+     * @param $usable
+     */
+    private function attachHostUsable($usable)
+    {
+        $this->hostUsables[] = $usable;
     }
 }
