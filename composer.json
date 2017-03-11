@@ -22,7 +22,10 @@
     "autoload": {
         "psr-4": {
             "" : "app"
-        }
+        },
+        "files": [
+            "app/loop-bootstrap.php"
+        ]
     },
     "scripts": {
         "post-create-project-cmd": [
