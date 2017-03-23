@@ -13,5 +13,5 @@ use Auryn\Injector;
 
 interface InjectionVisitable
 {
-    public static function receiveInjectionVisit(Injector $injector);
+    public function receiveInjectionVisit(Injector $injector);
 }

@@ -30,13 +30,6 @@ final class App
     private function loadServices()
     {
         Functional\map(
-            \AppService\ServiceLoader::getInstance()->getInjectionVisitables(),
-            function($visitable) {
-                forward_static_call($visitable.'::receiveInjectionVisit', $this->injector);
-            }
-        );
-
-        Functional\map(
             \AppService\ServiceLoader::getInstance()->getServices(),
             $this->getServiceBuildChain()
         );
@@ -53,9 +46,23 @@ final class App
 
     private function getServiceBuildChain()
     {
+        $wrap = function($callable) {
+            return function($serviceName) use ($callable) {
+                $callable($serviceName);
+                return $serviceName;
+            };
+        };
+
         $buildService = function ($serviceName) {
             $this->injector->share($serviceName)->make($serviceName);
-            return $serviceName;
+        };
+
+        $handleInjectionVisits = function ($serviceName) {
+            $service = $this->injector->make($serviceName);
+            $class = new \ReflectionClass($service);
+            if($class->implementsInterface('AppService\InjectionVisitable')) {
+                call_user_func([$service, 'receiveInjectionVisit'], $this->injector);
+            }
         };
 
         $initialiseRouting = function($serviceName) {
@@ -85,12 +92,18 @@ final class App
                     $this->attachHostUsable(\Aerys\root($docRoot));
                 }
             }
-            return $serviceName;
         };
 
-        return Functional\compose(
-            $buildService,
-            $initialiseRouting
+        return call_user_func_array(
+            'Functional\compose',
+            Functional\map(
+                [
+                    $buildService,
+                    $handleInjectionVisits,
+                    $initialiseRouting
+                ],
+                $wrap
+            )
         );
     }
 

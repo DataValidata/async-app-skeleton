@@ -12,15 +12,10 @@ final class ServiceLoader
         $serviceConfig = require_once dirname(__DIR__) . '/services.php';
         $this->serviceData = [
             'services' => [],
-            'injectionVisitables' => [],
         ];
 
         foreach ($serviceConfig as $service) {
             $this->serviceData['services'][] = $service;
-            $class = new \ReflectionClass($service);
-            if($class->implementsInterface('AppService\InjectionVisitable')) {
-                $this->serviceData['injectionVisitables'][] = $service;
-            }
         }
 
     }
@@ -40,10 +35,5 @@ final class ServiceLoader
     public function getServices()
     {
         return $this->serviceData['services'];
-    }
-
-    public function getInjectionVisitables()
-    {
-        return $this->serviceData['injectionVisitables'];
     }
 }
