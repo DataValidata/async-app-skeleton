@@ -13,4 +13,9 @@ const AERYS_OPTIONS = [
 
 /* --- http://localhost:5000/ ------------------------------------------------------------------- */
 
-(new \App);
+if(!getenv('PORT')) {putenv("PORT=5000");}
+if(!getenv('APP_ROOT')) {putenv("APP_ROOT=".__dir__);}
+
+$injector = (new \Auryn\Injector)->share('Auryn\Injector');
+$injector->alias('DataValidata\AsyncApp\AsynchronousApp', 'DataValidata\AsyncApp\App');
+$injector->make('DataValidata\AsyncApp\AsynchronousApp');

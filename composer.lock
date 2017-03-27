@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2da65fced08e87df92fa35541141a8b",
+    "content-hash": "33a607db973d14e1462fc50191612cd5",
     "packages": [
         {
             "name": "amphp/aerys",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/aerys.git",
-                "reference": "b414eb1a85f31617ca03d8939c090b7bb16d9f71"
+                "reference": "360d0d2ea5a22625fa51d252e8c36b2a8da8bca7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/aerys/zipball/b414eb1a85f31617ca03d8939c090b7bb16d9f71",
-                "reference": "b414eb1a85f31617ca03d8939c090b7bb16d9f71",
+                "url": "https://api.github.com/repos/amphp/aerys/zipball/360d0d2ea5a22625fa51d252e8c36b2a8da8bca7",
+                "reference": "360d0d2ea5a22625fa51d252e8c36b2a8da8bca7",
                 "shasum": ""
             },
             "require": {
@@ -31,10 +31,10 @@
             },
             "require-dev": {
                 "amphp/artax": "dev-amp_v2",
-                "amphp/loop": "dev-master",
+                "amphp/phpunit-util": "dev-master",
                 "friendsofphp/php-cs-fixer": "~1.9",
                 "http2jp/hpack-test-case": "1.0",
-                "phpunit/phpunit": "^5.2"
+                "phpunit/phpunit": "^6.0"
             },
             "bin": [
                 "bin/aerys"
@@ -86,7 +86,7 @@
                 "server",
                 "websocket"
             ],
-            "time": "2017-02-28 05:45:38"
+            "time": "2017-03-22 03:44:33"
         },
         {
             "name": "amphp/amp",
@@ -94,26 +94,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/amp.git",
-                "reference": "72378e2b82d9f1dee6b93de2bee8aa138e7f67e1"
+                "reference": "c464e070e4cc6aa9a162d7a66df04c7513aef90e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/amp/zipball/72378e2b82d9f1dee6b93de2bee8aa138e7f67e1",
-                "reference": "72378e2b82d9f1dee6b93de2bee8aa138e7f67e1",
+                "url": "https://api.github.com/repos/amphp/amp/zipball/c464e070e4cc6aa9a162d7a66df04c7513aef90e",
+                "reference": "c464e070e4cc6aa9a162d7a66df04c7513aef90e",
                 "shasum": ""
             },
             "require": {
-                "async-interop/event-loop": "^0.5",
-                "async-interop/event-loop-implementation": "^0.5",
-                "async-interop/promise": "^0.4",
                 "php": ">=7"
             },
             "require-dev": {
-                "amphp/loop": "dev-master",
-                "async-interop/promise-test": "^0.4.1",
+                "amphp/phpunit-util": "dev-master",
                 "friendsofphp/php-cs-fixer": "~1.9",
-                "humbug/humbug": "^1@dev",
-                "phpunit/phpunit": "^5.7"
+                "phpunit/phpunit": "^6.0.9",
+                "react/promise": "^2"
             },
             "type": "library",
             "extra": {
@@ -126,7 +122,6 @@
                     "Amp\\": "lib/"
                 },
                 "files": [
-                    "lib/bootstrap.php",
                     "lib/functions.php"
                 ]
             },
@@ -136,14 +131,20 @@
             ],
             "authors": [
                 {
+                    "name": "Bob Weinand",
+                    "email": "bobwei9@hotmail.com"
+                },
+                {
+                    "name": "Niklas Keller",
+                    "email": "me@kelunik.com"
+                },
+                {
                     "name": "Daniel Lowrey",
-                    "email": "rdlowrey@php.net",
-                    "role": "Creator / Lead Developer"
+                    "email": "rdlowrey@php.net"
                 },
                 {
                     "name": "Aaron Piotrowski",
-                    "email": "aaron@trowski.com",
-                    "role": "v2.0 Developer"
+                    "email": "aaron@trowski.com"
                 }
             ],
             "description": "A non-blocking concurrency framework for PHP applications",
@@ -158,7 +159,7 @@
                 "non-blocking",
                 "promise"
             ],
-            "time": "2017-02-22 21:52:30"
+            "time": "2017-03-26 17:53:26"
         },
         {
             "name": "amphp/cache",
@@ -166,20 +167,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/cache.git",
-                "reference": "eb4004bb2ae89f80fb01bb0aed272770f3d41c83"
+                "reference": "558565a35e9b414298fbbf5784bf5b86b2c18b01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/cache/zipball/eb4004bb2ae89f80fb01bb0aed272770f3d41c83",
-                "reference": "eb4004bb2ae89f80fb01bb0aed272770f3d41c83",
+                "url": "https://api.github.com/repos/amphp/cache/zipball/558565a35e9b414298fbbf5784bf5b86b2c18b01",
+                "reference": "558565a35e9b414298fbbf5784bf5b86b2c18b01",
                 "shasum": ""
             },
             "require": {
-                "amphp/amp": "dev-master as 2.0",
-                "async-interop/event-loop": "^0.5"
+                "amphp/amp": "dev-master as 2.0"
             },
             "require-dev": {
-                "amphp/loop": "dev-master",
                 "friendsofphp/php-cs-fixer": "~1.9",
                 "phpunit/phpunit": "^5"
             },
@@ -208,7 +207,7 @@
             ],
             "description": "A promise-aware caching API built on the amp concurrency framework",
             "homepage": "https://github.com/amphp/cache",
-            "time": "2017-01-11 13:14:16"
+            "time": "2017-03-17 15:42:09"
         },
         {
             "name": "amphp/dns",
@@ -216,12 +215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/dns.git",
-                "reference": "badf3a91003814ce574030a3d695978099d15301"
+                "reference": "1d8dc615bf7140c87e52156f31c834b0daba2e01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/dns/zipball/badf3a91003814ce574030a3d695978099d15301",
-                "reference": "badf3a91003814ce574030a3d695978099d15301",
+                "url": "https://api.github.com/repos/amphp/dns/zipball/1d8dc615bf7140c87e52156f31c834b0daba2e01",
+                "reference": "1d8dc615bf7140c87e52156f31c834b0daba2e01",
                 "shasum": ""
             },
             "require": {
@@ -233,7 +232,6 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "amphp/loop": "dev-master",
                 "friendsofphp/php-cs-fixer": "^1.9",
                 "phpunit/phpunit": "^5.2.8"
             },
@@ -278,7 +276,7 @@
                 "dns",
                 "resolve"
             ],
-            "time": "2017-01-25 15:36:19"
+            "time": "2017-03-17 04:01:58"
         },
         {
             "name": "amphp/file",
@@ -286,21 +284,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/file.git",
-                "reference": "0d76557e8e1295de7c9b276710aed6a23178e5a3"
+                "reference": "97256b902961a4b0c2b82a9b97b671ab962fef64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/file/zipball/0d76557e8e1295de7c9b276710aed6a23178e5a3",
-                "reference": "0d76557e8e1295de7c9b276710aed6a23178e5a3",
+                "url": "https://api.github.com/repos/amphp/file/zipball/97256b902961a4b0c2b82a9b97b671ab962fef64",
+                "reference": "97256b902961a4b0c2b82a9b97b671ab962fef64",
                 "shasum": ""
             },
             "require": {
-                "amphp/amp": "dev-master as 2.0",
-                "async-interop/event-loop": "^0.5",
-                "async-interop/promise": "^0.4"
+                "amphp/amp": "dev-master as 2.0"
             },
             "require-dev": {
-                "amphp/loop": "dev-master",
                 "amphp/parallel": "dev-master as 0.1",
                 "friendsofphp/php-cs-fixer": "~1.9",
                 "phpunit/phpunit": "^5.0"
@@ -348,7 +343,7 @@
                 "non-blocking",
                 "static"
             ],
-            "time": "2017-01-11 16:29:14"
+            "time": "2017-03-21 23:53:55"
         },
         {
             "name": "amphp/loop",
@@ -403,19 +398,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/process.git",
-                "reference": "86479bc591d974fcf48e6340fd15a22f12a8f907"
+                "reference": "6b965310b0f84a2e8290d02ec2bd68e6b2526a1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/process/zipball/86479bc591d974fcf48e6340fd15a22f12a8f907",
-                "reference": "86479bc591d974fcf48e6340fd15a22f12a8f907",
+                "url": "https://api.github.com/repos/amphp/process/zipball/6b965310b0f84a2e8290d02ec2bd68e6b2526a1b",
+                "reference": "6b965310b0f84a2e8290d02ec2bd68e6b2526a1b",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "dev-master as 2.0"
             },
             "require-dev": {
-                "amphp/loop": "dev-master",
                 "friendsofphp/php-cs-fixer": "~1.9",
                 "kelunik/fqn-check": "^0.1.3",
                 "phpunit/phpunit": "^5.0"
@@ -442,7 +436,7 @@
             ],
             "description": "Asynchronous process manager",
             "homepage": "https://github.com/amphp/process",
-            "time": "2017-03-05 17:08:34"
+            "time": "2017-03-21 22:37:12"
         },
         {
             "name": "amphp/socket",
@@ -450,12 +444,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/socket.git",
-                "reference": "0bbf94b246b104e4945fd5a3026bfc7f91469c9a"
+                "reference": "d6660cb67d2d96c322df2add45e49e66aacb443f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/socket/zipball/0bbf94b246b104e4945fd5a3026bfc7f91469c9a",
-                "reference": "0bbf94b246b104e4945fd5a3026bfc7f91469c9a",
+                "url": "https://api.github.com/repos/amphp/socket/zipball/d6660cb67d2d96c322df2add45e49e66aacb443f",
+                "reference": "d6660cb67d2d96c322df2add45e49e66aacb443f",
                 "shasum": ""
             },
             "require": {
@@ -465,7 +459,6 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "amphp/loop": "dev-master",
                 "friendsofphp/php-cs-fixer": "~1.9",
                 "phpunit/phpunit": "^4|^5"
             },
@@ -504,7 +497,7 @@
                 "tcp",
                 "tls"
             ],
-            "time": "2017-01-18 16:34:50"
+            "time": "2017-03-25 01:49:36"
         },
         {
             "name": "amphp/stream",
@@ -512,26 +505,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/stream.git",
-                "reference": "4c5b7f539b3efbf932baf139965a768e7f20902d"
+                "reference": "858a76e675f0e507f4457635d93acbd40155af48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/stream/zipball/4c5b7f539b3efbf932baf139965a768e7f20902d",
-                "reference": "4c5b7f539b3efbf932baf139965a768e7f20902d",
+                "url": "https://api.github.com/repos/amphp/stream/zipball/858a76e675f0e507f4457635d93acbd40155af48",
+                "reference": "858a76e675f0e507f4457635d93acbd40155af48",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "dev-master as 2.0"
             },
             "require-dev": {
-                "amphp/loop": "dev-master",
                 "friendsofphp/php-cs-fixer": "~1.9",
                 "phpunit/phpunit": "^5"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Amp\\Stream\\": "lib/"
+                    "Amp\\ByteStream\\": "lib/"
                 },
                 "files": [
                     "lib/functions.php",
@@ -556,7 +548,7 @@
                 "non-blocking",
                 "stream"
             ],
-            "time": "2017-01-09 16:53:42"
+            "time": "2017-03-23 23:38:15"
         },
         {
             "name": "amphp/windows-registry",
@@ -564,20 +556,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/windows-registry.git",
-                "reference": "b3fa7b624defbd6a4b584be619208640643c2d3a"
+                "reference": "8f96a07f75b9ca36931b39665fc92cde2eda97d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/windows-registry/zipball/b3fa7b624defbd6a4b584be619208640643c2d3a",
-                "reference": "b3fa7b624defbd6a4b584be619208640643c2d3a",
+                "url": "https://api.github.com/repos/amphp/windows-registry/zipball/8f96a07f75b9ca36931b39665fc92cde2eda97d4",
+                "reference": "8f96a07f75b9ca36931b39665fc92cde2eda97d4",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "dev-master as 2.0",
                 "amphp/process": "dev-amp_v2 as 0.2"
-            },
-            "require-dev": {
-                "amphp/loop": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -596,7 +585,7 @@
                 }
             ],
             "description": "Windows Registry Reader.",
-            "time": "2017-01-15 16:17:25"
+            "time": "2017-03-17 03:47:16"
         },
         {
             "name": "async-interop/event-loop",
@@ -640,59 +629,17 @@
             "time": "2017-01-05T10:19:16+00:00"
         },
         {
-            "name": "async-interop/promise",
-            "version": "v0.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/async-interop/promise.git",
-                "reference": "a617ac4083303969c35f606a3effb908f10c5d07"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/async-interop/promise/zipball/a617ac4083303969c35f606a3effb908f10c5d07",
-                "reference": "a617ac4083303969c35f606a3effb908f10c5d07",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "jakub-onderka/php-console-highlighter": "^0.3.2",
-                "jakub-onderka/php-parallel-lint": "^0.9.2",
-                "phpunit/phpunit": "^4.8.25|^5.3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "AsyncInterop\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A promise interface for interoperability in async operations.",
-            "keywords": [
-                "async",
-                "awaitable",
-                "future",
-                "interop",
-                "promise"
-            ],
-            "time": "2017-03-02T16:26:32+00:00"
-        },
-        {
             "name": "beberlei/assert",
-            "version": "v2.7.3",
+            "version": "v2.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beberlei/assert.git",
-                "reference": "5972776d6a9eedfd3c55216341434e19cb50418f"
+                "reference": "3ee3bc468a3ce4bbfc3d74f53c6cdb5242d39d1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beberlei/assert/zipball/5972776d6a9eedfd3c55216341434e19cb50418f",
-                "reference": "5972776d6a9eedfd3c55216341434e19cb50418f",
+                "url": "https://api.github.com/repos/beberlei/assert/zipball/3ee3bc468a3ce4bbfc3d74f53c6cdb5242d39d1a",
+                "reference": "3ee3bc468a3ce4bbfc3d74f53c6cdb5242d39d1a",
                 "shasum": ""
             },
             "require": {
@@ -700,8 +647,8 @@
                 "php": ">=5.3"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
-                "phpunit/phpunit": "@stable"
+                "friendsofphp/php-cs-fixer": "^2.1.1",
+                "phpunit/phpunit": "^4|^5"
             },
             "type": "library",
             "autoload": {
@@ -734,7 +681,48 @@
                 "assertion",
                 "validation"
             ],
-            "time": "2017-01-24T15:14:39+00:00"
+            "time": "2017-03-14T18:06:52+00:00"
+        },
+        {
+            "name": "datavalidata/async-app",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DataValidata/async-app.git",
+                "reference": "4e7a52c5f27560143cb0e9f178c0f08fc8dc40b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DataValidata/async-app/zipball/4e7a52c5f27560143cb0e9f178c0f08fc8dc40b7",
+                "reference": "4e7a52c5f27560143cb0e9f178c0f08fc8dc40b7",
+                "shasum": ""
+            },
+            "require": {
+                "amphp/aerys": "dev-amp_v2",
+                "amphp/loop": "dev-master",
+                "beberlei/assert": "^2.7",
+                "lstrojny/functional-php": "^1.5",
+                "php": ">=7.0.0",
+                "rdlowrey/auryn": "^1.4",
+                "vlucas/phpdotenv": "^2.4"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DataValidata\\AsyncApp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Ciaran Kelly",
+                    "email": "ciaran@datavalidata.com"
+                }
+            ],
+            "time": "2017-03-27 13:16:48"
         },
         {
             "name": "daverandom/libdns",
@@ -1095,16 +1083,16 @@
         },
         {
             "name": "seld/cli-prompt",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/cli-prompt.git",
-                "reference": "8cbe10923cae5bcd7c5a713f6703fc4727c8c1b4"
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/cli-prompt/zipball/8cbe10923cae5bcd7c5a713f6703fc4727c8c1b4",
-                "reference": "8cbe10923cae5bcd7c5a713f6703fc4727c8c1b4",
+                "url": "https://api.github.com/repos/Seldaek/cli-prompt/zipball/a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
                 "shasum": ""
             },
             "require": {
@@ -1139,7 +1127,7 @@
                 "input",
                 "prompt"
             ],
-            "time": "2016-04-18T09:31:41+00:00"
+            "time": "2017-03-18T11:32:45+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1196,8 +1184,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "amphp/aerys": 20,
-        "amphp/loop": 20
+        "datavalidata/async-app": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
