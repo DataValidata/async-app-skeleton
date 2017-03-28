@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "33a607db973d14e1462fc50191612cd5",
+    "content-hash": "b982bcc0bf7c47861fb6dde75887e42c",
     "packages": [
         {
             "name": "amphp/aerys",
@@ -94,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/amp.git",
-                "reference": "c464e070e4cc6aa9a162d7a66df04c7513aef90e"
+                "reference": "2f7e9a0746e718ee2d64ab51c5aad8f5748eaa74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/amp/zipball/c464e070e4cc6aa9a162d7a66df04c7513aef90e",
-                "reference": "c464e070e4cc6aa9a162d7a66df04c7513aef90e",
+                "url": "https://api.github.com/repos/amphp/amp/zipball/2f7e9a0746e718ee2d64ab51c5aad8f5748eaa74",
+                "reference": "2f7e9a0746e718ee2d64ab51c5aad8f5748eaa74",
                 "shasum": ""
             },
             "require": {
@@ -159,7 +159,7 @@
                 "non-blocking",
                 "promise"
             ],
-            "time": "2017-03-26 17:53:26"
+            "time": "2017-03-27 23:37:55"
         },
         {
             "name": "amphp/cache",
@@ -629,6 +629,55 @@
             "time": "2017-01-05T10:19:16+00:00"
         },
         {
+            "name": "aura/router",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Router.git",
+                "reference": "52507bc813c92511dbcacc7463f163ef5149ad38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Router/zipball/52507bc813c92511dbcacc7463f163ef5149ad38",
+                "reference": "52507bc813c92511dbcacc7463f163ef5149ad38",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0",
+                "psr/http-message": "~1.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.7 || ~4.8",
+                "zendframework/zend-diactoros": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Aura\\Router\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aura.Router Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Router/contributors"
+                }
+            ],
+            "description": "Powerful, flexible web routing for PSR-7 requests.",
+            "homepage": "https://github.com/auraphp/Aura.Router",
+            "keywords": [
+                "psr-7",
+                "route",
+                "router",
+                "routing"
+            ],
+            "time": "2017-03-02T16:34:47+00:00"
+        },
+        {
             "name": "beberlei/assert",
             "version": "v2.7.4",
             "source": {
@@ -685,21 +734,22 @@
         },
         {
             "name": "datavalidata/async-app",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DataValidata/async-app.git",
-                "reference": "4e7a52c5f27560143cb0e9f178c0f08fc8dc40b7"
+                "reference": "e1e69998e83214800155c775e76a53279109392d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DataValidata/async-app/zipball/4e7a52c5f27560143cb0e9f178c0f08fc8dc40b7",
-                "reference": "4e7a52c5f27560143cb0e9f178c0f08fc8dc40b7",
+                "url": "https://api.github.com/repos/DataValidata/async-app/zipball/e1e69998e83214800155c775e76a53279109392d",
+                "reference": "e1e69998e83214800155c775e76a53279109392d",
                 "shasum": ""
             },
             "require": {
                 "amphp/aerys": "dev-amp_v2",
                 "amphp/loop": "dev-master",
+                "aura/router": "^3.1",
                 "beberlei/assert": "^2.7",
                 "lstrojny/functional-php": "^1.5",
                 "php": ">=7.0.0",
@@ -722,7 +772,7 @@
                     "email": "ciaran@datavalidata.com"
                 }
             ],
-            "time": "2017-03-27 13:16:48"
+            "time": "2017-03-28T14:09:41+00:00"
         },
         {
             "name": "daverandom/libdns",
@@ -972,6 +1022,56 @@
                 "routing"
             ],
             "time": "2017-01-19T11:35:12+00:00"
+        },
+        {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
