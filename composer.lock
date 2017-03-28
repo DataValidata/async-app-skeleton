@@ -734,16 +734,16 @@
         },
         {
             "name": "datavalidata/async-app",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/DataValidata/async-app.git",
-                "reference": "e1e69998e83214800155c775e76a53279109392d"
+                "reference": "79fb5b50f3085cbd7ed857aa5d3ba470b0c2cc86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DataValidata/async-app/zipball/e1e69998e83214800155c775e76a53279109392d",
-                "reference": "e1e69998e83214800155c775e76a53279109392d",
+                "url": "https://api.github.com/repos/DataValidata/async-app/zipball/79fb5b50f3085cbd7ed857aa5d3ba470b0c2cc86",
+                "reference": "79fb5b50f3085cbd7ed857aa5d3ba470b0c2cc86",
                 "shasum": ""
             },
             "require": {
@@ -772,7 +772,7 @@
                     "email": "ciaran@datavalidata.com"
                 }
             ],
-            "time": "2017-03-28T14:09:41+00:00"
+            "time": "2017-03-28T14:27:23+00:00"
         },
         {
             "name": "daverandom/libdns",
