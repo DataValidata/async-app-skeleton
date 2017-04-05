@@ -12,12 +12,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.0.0",
-        "datavalidata/async-app": "@dev"
-    },
-    "autoload": {
-        "files": [
-            "vendor/datavalidata/async-app/src/loop-bootstrap.php"
-        ]
+        "datavalidata/async-app": "^1.0.3"
     },
     "scripts": {
         "post-create-project-cmd": [
